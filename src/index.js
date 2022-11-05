@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    // Extract the prefix needed for CSS stylings 
     function prefix() {
         var styles = window.getComputedStyle(document.documentElement, ''),
             pre = (Array.prototype.slice
@@ -15,6 +16,8 @@ $(document).ready(function () {
             js: pre[0].toUpperCase() + pre.substr(1)
         };
     }
+
+    // 
     var _containerHeight = document.getElementsByClassName('bird-container')[0].offsetHeight;
     var _width, _height, _scrollHeight;
     var pre = prefix();
@@ -25,40 +28,42 @@ $(document).ready(function () {
     var _positions = [
         {
             name: 'intro_bird1',
-            start: { percent: 0.2, x: .2, y: 0 },
-            end: { percent: 0.8, x: .8, y: 0 },
+            start: { percent: 0.2, x: -1, y: 0 },
+            end: { percent: 0.8, x: 1, y: 0 },
         },
         {
             name: 'intro_bird2',
-            start: { percent: 0.2, x: .2, y: 0 },
-            end: { percent: 0.8, x: .8, y: 0 },
+            start: { percent: 0.2, x: -1, y: 0 },
+            end: { percent: 0.8, x: 1, y: 0 },
         },
         {
             name: 'intro_bird3',
-            start: { percent: 0.2, x: .2, y: 0 },
-            end: { percent: 0.8, x: .8, y: 0 },
+            start: { percent: 0.2, x: -1, y: 0 },
+            end: { percent: 0.8, x: 1, y: 0 },
         },
         {
             name: 'intro_bird4',
-            start: { percent: 0.2, x: .2, y: 0 },
-            end: { percent: 0.8, x: .8, y: 0 },
+            start: { percent: 0.2, x: -1, y: 0 },
+            end: { percent: 0.8, x: 1, y: 0 },
         },
         {
             name: 'intro_bird5',
-            start: { percent: 0.2, x: .2, y: 0 },
-            end: { percent: 0.8, x: .8, y: 0 },
+            start: { percent: 0.2, x: -1, y: 0 },
+            end: { percent: 0.8, x: 1, y: 0 },
         },
         {
             name: 'intro_bird6',
-            start: { percent: 0.2, x: .2, y: 0 },
-            end: { percent: 0.8, x: .8, y: 0 },
+            start: { percent: 0.2, x: -1, y: 0 },
+            end: { percent: 0.8, x: 1, y: 0 },
         },
         {
             name: 'intro_bird7',
-            start: { percent: 0.2, x: .2, y: 0 },
-            end: { percent: 0.8, x: .8, y: 0 },
+            start: { percent: 0.2, x: -1, y: 0 },
+            end: { percent: 0.8, x: 1, y: 0 },
         },
     ]
+
+    //
     function initMovingElements() {
         for (var i = 0; i < _positions.length; i++) {
             _positions[i].diff = {
@@ -70,6 +75,8 @@ $(document).ready(function () {
             _movingElements.push(el);
         }
     }
+
+    //
     function updateElements() {
         for (var i = 0; i < _movingElements.length; i++) {
             var p = _positions[i];
@@ -83,6 +90,8 @@ $(document).ready(function () {
             }
         }
     }
+
+    //
     function loop() {
         _scrollOffset = window.pageYOffset || window.scrollTop;
         _scrollPercent = _scrollOffset / _scrollHeight || 0;
@@ -90,6 +99,8 @@ $(document).ready(function () {
 
         requestAnimationFrame(loop);
     }
+
+    // 
     function resize() {
         _width = window.innerWidth;
         _height = window.innerHeight;
