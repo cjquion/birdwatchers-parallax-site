@@ -29,37 +29,37 @@ $(document).ready(function () {
         {
             name: 'intro_bird1',
             start: { percent: 0.55, x: -1, y: 0 },
-            end: { percent: 1.3, x: 1, y: 0 },
+            end: { percent: 1.5, x: 1, y: 0 },
             speed: .05,
         },
         {
             name: 'intro_bird2',
             start: { percent: 0.55, x: -1, y: 0 },
-            end: { percent: 1.3, x: 1, y: 0 },
+            end: { percent: 1.6, x: 1, y: 0 },
             speed: .08,
         },
         {
             name: 'intro_bird3',
             start: { percent: 0.55, x: -1, y: 0 },
-            end: { percent: 1.3, x: 1, y: 0 },
+            end: { percent: 1.2, x: 1, y: 0 },
             speed: .1,
         },
         {
             name: 'intro_bird4',
             start: { percent: 0.55, x: -1, y: 0 },
-            end: { percent: 1.3, x: 1, y: 0 },
+            end: { percent: 2.3, x: 1, y: 0 },
             speed: .12,
         },
         {
             name: 'intro_bird5',
             start: { percent: 0.55, x: -1, y: 0 },
-            end: { percent: 1.3, x: 1, y: 0 },
+            end: { percent: 2.1, x: 1, y: 0 },
             speed: .1,
         },
         {
             name: 'intro_bird6',
             start: { percent: 0.55, x: -1, y: 0 },
-            end: { percent: 1.3, x: 1, y: 0 },
+            end: { percent: 1.3, x: .8, y: 0 },
             speed: .05,
         },
         {
