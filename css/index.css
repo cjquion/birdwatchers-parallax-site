@@ -491,9 +491,13 @@ img {
     }
 }
 
-@media only screen and (max-width: 3440px) {
+@media only screen and (max-width: 3000px) {
     #scene1 {
         height: 2111px;
+    }
+    #scene3 {
+        height: 2111px;
+        grid-column: 1/19;
     }
 }
 
