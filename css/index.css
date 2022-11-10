@@ -237,9 +237,10 @@ img {
 }
 
 #scene1 {
-    min-height: 100vh;
+    height: 100%;
     margin-bottom: 100px;
 }
+
 #scene2 {
     /*max-height: 4502px;
     min-height: 1500px;*/
@@ -304,6 +305,11 @@ img {
     padding-right: 15vw;
     Font-Family: 'Muli', Sans-Serif;
     Font-Size: 16px;
+}
+
+#overlay1 {        
+    grid-row: 5;
+    grid-column: -18/-1;
 }
 
 
@@ -497,6 +503,29 @@ img {
     }
     #scene3 {
         height: 2111px;
+        grid-column: 1/19;
+    }
+}
+
+
+@media only screen and (min-width: 3440px) {
+    #scene1 {
+        width: 2111px;
+        height: 1446px;
+    }
+    #overlay1, #overlay3 {
+        width: 1000px;
+        height: 900px;
+        grid-row: 6;
+        grid-column: -12/-1;
+    }
+    #scene2 {
+        width: 2111px;
+        height: 1986px;
+    }
+    #scene3 {
+        width: 2111px;
+        height: 1446px;
         grid-column: 1/19;
     }
 }
