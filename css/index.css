@@ -412,10 +412,10 @@ img {
         width: 600px;
         height: 300px;
     }
-    #scene1 { 
+    #scene1, #scene3 { 
         height: 887px;
     }
-    #parallax-scene-container-3, #scene1-flex {
+    #parallax-scene-container-3, #scene1-flex, #scene3 {
         height: 887px;
         width: 1026px;
     }
@@ -428,7 +428,7 @@ img {
         grid-row: 1/4;
     }
     #overlay1, #overlay3 {
-        grid-row: 4;
+        grid-row: 8;
         grid-column: 14/-1;
     }
     #overlay2 {
