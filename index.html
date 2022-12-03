@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="subtitle-text">
-                <p class="subtitle-intro-text">
+                <p class="subtitle-intro-text fade-in">
                     Every year, as the temperatures start to climb in the spring, our region plays host to over 200 species of birds that are moving north after spending winter in South America. While some species are only passing through on their way further north to Canada or even the Arctic, others will be building nests right here in the Washington region as they breed throughout the summer. From patches of grasslands to forests and rivers, the city’s parks offer a wide range of habitats for resident and migratory birds all year long.
                 </p>
             </div>
@@ -77,8 +77,8 @@
                             </p>
                         </div>
                     </div>
-                    <div class="overlay_container" id="overlay1">
-                        <div class="overlay_content" id="circle-animation1"></div>
+                    <div class="overlay_container" id="animation1">
+                        <div class="overlay_content" id="animation-content1"></div>
                     </div>
                 </div>
     
@@ -108,8 +108,8 @@
                             </p>
                         </div>
                     </div>
-                    <div class="overlay_container" id="overlay2">
-                        <div class="overlay_content" id="circle-animation2"></div>
+                    <div class="overlay_container" id="animation2">
+                        <div class="overlay_content" id="animation-content2"></div>
                     </div>
                 </div>
                 
@@ -140,8 +140,8 @@
                         </div>
                     </div>
 
-                    <div class="overlay_container" id="overlay3">
-                        <div class="overlay_content" id="circle-animation3"></div>
+                    <div class="overlay_container" id="animation3">
+                        <div class="overlay_content" id="animation-content3"></div>
                     </div>
                 </div>
             </div>
@@ -171,8 +171,9 @@
     var scene3 = document.getElementById('parallax-scene-3');
     var parallax3 = new Parallax(scene3);
 
+    /*
     var animation1 = lottie.loadAnimation({
-        container: document.getElementById('circle-animation1'),
+        container: document.getElementById('animation1'),
         path: 'assets/Circle_heron.json',
         renderer: 'svg',
         loop: false,
@@ -181,7 +182,7 @@
     });
 
     var animation2 = lottie.loadAnimation({
-        container: document.getElementById('circle-animation2'),
+        container: document.getElementById('animation2'),
         path: 'assets/Circle_owl.json',
         renderer: 'svg',
         loop: false,
@@ -190,13 +191,29 @@
     });
 
     var animation3 = lottie.loadAnimation({
-        container: document.getElementById('circle-animation3'),
+        container: document.getElementById('animation3'),
         path: 'assets/Circle_pintail.json',
         renderer: 'svg',
         loop: false,
         autoplay: true,
         name: "Circle animation3"
     });
+    */
+
+    const animationMap = { 
+        animation1: {
+            assetPath: 'assets/Circle_heron.json',
+            loaded: false,
+        },
+        animation2: {
+            assetPath: 'assets/Circle_owl.json',
+            loaded: false,
+        },
+        animation3: {
+            assetPath: 'assets/Circle_pintail.json',
+            loaded: false
+        }
+    }
 
     function fadeIn() {
         var fadeInSections = document.querySelectorAll(".fade-in");
@@ -213,8 +230,33 @@
         }
     }
 
+    var animation1, animation2, animation3;
+
+    function triggerAnimation() {
+        var animatedSections = document.querySelectorAll(".overlay_container");
+        for (var i = 0; i < animatedSections.length; i++) {
+            var currSection = animatedSections[i];
+            var docViewTop = $(window).scrollTop();
+            var docViewBottom = docViewTop + $(window).height();
+            var elemTop = $(currSection).offset().top;
+            if ((elemTop <= docViewBottom) && (elemTop >= docViewTop) && !animationMap[currSection.id].loaded) {
+                lottie.loadAnimation({
+                    container: document.getElementById(currSection.id),
+                    path: animationMap[currSection.id].assetPath,
+                    renderer: 'svg',
+                    loop: false,
+                    autoplay: true,
+                    name: currSection.id
+                });            
+                animationMap[currSection.id].loaded = true;
+            }
+        }
+    }
+
     window.addEventListener("scroll", fadeIn);
+    window.addEventListener("scroll", triggerAnimation);
     fadeIn();
+    triggerAnimation();
 
     </script>
 
