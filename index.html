@@ -41,6 +41,7 @@
         </div>
    
         <div class="bird-container row">
+            <div class="clouds" id="clouds">              <img src="assets/clouds.png">                </div>
             <div class="bird intro_bird1" id="bird1">              <img src="assets/bird1.png">                </div>
             <div class="bird intro_bird2" id="bird2">              <img src="assets/bird2.png">                </div>
             <div class="bird intro_bird3" id="bird3">              <img src="assets/bird3.png">                </div>
@@ -145,10 +146,7 @@
                     </div>
                 </div>
             </div>
-
-            
         </div>
-
     </div>
    
    
@@ -157,7 +155,6 @@
     <!-- Scripts -->
     <script src="./src/bundled-parallax.js"></script>
     <script>
-
 
     var introScene = document.getElementById('introScene');
     var parallaxIntroScene = new Parallax(introScene);
@@ -170,35 +167,6 @@
 
     var scene3 = document.getElementById('parallax-scene-3');
     var parallax3 = new Parallax(scene3);
-
-    /*
-    var animation1 = lottie.loadAnimation({
-        container: document.getElementById('animation1'),
-        path: 'assets/Circle_heron.json',
-        renderer: 'svg',
-        loop: false,
-        autoplay: true,
-        name: "Circle animation1"
-    });
-
-    var animation2 = lottie.loadAnimation({
-        container: document.getElementById('animation2'),
-        path: 'assets/Circle_owl.json',
-        renderer: 'svg',
-        loop: false,
-        autoplay: true,
-        name: "Circle animation2"
-    });
-
-    var animation3 = lottie.loadAnimation({
-        container: document.getElementById('animation3'),
-        path: 'assets/Circle_pintail.json',
-        renderer: 'svg',
-        loop: false,
-        autoplay: true,
-        name: "Circle animation3"
-    });
-    */
 
     const animationMap = { 
         animation1: {

@@ -104,7 +104,7 @@ body {
     display: inline-block;
     position: relative;
     width: 100%;
-    min-width: 900px;
+    /*min-width: 900px;*/
     min-height: 794px;
     max-height: fit-content;
     max-height: -moz-fit-content;
@@ -212,6 +212,17 @@ img {
     flex-direction: column;
     width: 100%;
     padding-top: 80px;
+}
+
+.clouds {
+    position: absolute;
+    width: 100vw;
+    height: 2432px;
+}
+.clouds > img {
+    max-height: 2432px;
+    height: auto;
+    min-width: 100vw;
 }
 
 #circle-animation { 
@@ -396,15 +407,44 @@ img {
 }
 
 @media only screen and (min-width: 600px) and (max-height: 1080px) {
+    .detail-text {
+        font-size: 1.5em;
+    }
+    .sidebyside-flex {
+        grid-column: 1/19;
+    }
     .bird-container {
-        height: 1368px;
+        height: 2432px;
     }
     #scene2 > .scene-text {
         max-height: 1560px;
     }
+    #scene1 {
+        height: 976px;
+    }
+    #animation1 {
+        grid-row: 7/-1;
+        grid-column: -14/-1;
+    }
+    #animation2 { 
+        grid-row: 4/-1;
+    }
+    #animation3 { 
+        grid-row: 8/-1;
+        grid-column: -14/-1;
+    }
+    #scene3 { 
+        height: 925px;
+    }
+    #parallax-scene-container-3 { 
+        height: 976px;
+    }
 }
 
 @media only screen and (max-width: 1440px) and (max-height: 815px) {
+    .clouds {
+        height: 2432px;
+    }
     .bird-container {
         height: 2432px;
     }
@@ -417,7 +457,7 @@ img {
     }
     #parallax-scene-container-3, #scene1-flex, #scene3 {
         height: 887px;
-        width: 1026px;
+        width: 1300px;
     }
     #scene1-text { 
         max-height: 887px;
